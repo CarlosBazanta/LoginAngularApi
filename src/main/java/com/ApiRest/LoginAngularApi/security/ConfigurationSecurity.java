@@ -54,10 +54,10 @@ public class ConfigurationSecurity extends WebSecurityConfigurerAdapter {
     }
 
     protected void configure(HttpSecurity http) throws Exception{
-        http.authorizeRequests().antMatchers("/").hasRole("ADMIN")
-                .antMatchers("/home").hasRole("USER")
+        http.authorizeRequests().antMatchers("/user/admin").hasRole("ADMIN")
+                .antMatchers("/user/home").hasRole("USER")
                 .antMatchers(
-                        "/register**",
+                        "/**",
                         "/js/**",
                         "/css/**",
                         "/img/**").permitAll()

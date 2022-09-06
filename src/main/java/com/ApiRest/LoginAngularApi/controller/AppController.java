@@ -1,5 +1,6 @@
 package com.ApiRest.LoginAngularApi.controller;
 
+import com.ApiRest.LoginAngularApi.repository.UserServiceRepository;
 import com.ApiRest.LoginAngularApi.security.ExceptionSecurity;
 import com.ApiRest.LoginAngularApi.entity.UserEntity;
 import com.ApiRest.LoginAngularApi.repository.UserRepository;
@@ -19,6 +20,9 @@ public class AppController {
 
     @Autowired
     private UserRepository userRepository;
+
+    @Autowired
+    private UserServiceRepository userServiceRepository;
 
     @GetMapping("/user")
     public List<UserEntity> userList(){
